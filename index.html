@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos - Programación Web III</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="offer-banner">
+        <i class="fas fa-gift"></i> ¡OFERTA ESPECIAL! Hasta 50% de descuento en productos seleccionados
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>PROGRAMACION WEB III (INF-133)</h1>
+            <p>PRACTICA 1 – CONSUMIR API - Lic. Aruguipa Marcelo</p>
+        </div>
+    </header>
+
+    <div class="filters">
+        <!--<label for="categoryFilter" class="visually-hidden">Filtrar por categoría</label>-->
+        <select id="categoryFilter" name="categoryFilter">
+            <option value="all">Todas las categorías</option>
+            <option value="beauty">Belleza</option>
+            <option value="fragrances">Fragancias</option>
+            <option value="furniture">Muebles</option>
+            <option value="groceries">Comestibles</option>
+        </select>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <button id="searchBtn"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+
+        <!--<label for="sortSelect" class="visually-hidden">Ordenar productos</label>-->
+        <select id="sortSelect">
+            <option value="default">Ordenar por</option>
+            <option value="price-asc">Precio: Menor a Mayor</option>
+            <option value="price-desc">Precio: Mayor a Menor</option>
+            <option value="rating">Mejor Valorados</option>
+        </select>
+    </div>
+
+    <div class="promo-banner">
+        <div class="promo-content">
+            <h2>¡Gran Venta de Verano 2025!</h2>
+            <p>Descuentos increíbles en todos nuestros productos</p>
+            <div class="promo-timer">
+                <i class="fas fa-clock"></i> La oferta termina en: 3 días, 12:45:32
+            </div>
+        </div>
+    </div>
+
+    <h2 class="main-title">PRODUCTOS 2025 - PROGRAMACION WEB III</h2>
+
+    <div id="productsContainer" class="products-container">
+        <!-- Los productos se cargarán dinámicamente con JavaScript -->
+    </div>
+
+    <div class="newsletter">
+        <div class="newsletter-content">
+            <h3>Suscríbete a nuestro Newsletter</h3>
+            <p>Recibe las últimas actualizaciones y ofertas exclusivas directamente en tu correo.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Acerca de Nosotros</h4>
+                <p>Somos estudiantes de Programación Web III, aprendiendo a desarrollar aplicaciones web modernas con las últimas tecnologías.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Integrantes del Grupo</h4>
+                <ul>
+                    <li><i class="fas fa-user"></i>Aviles Gonzales Arlin</li>
+                    <li><i class="fas fa-user"></i>Gabriel Zeus Cutile Lopez</li>
+                    <li><i class="fas fa-user"></i>3</li>
+                    <li><i class="fas fa-user"></i>4</li>
+                    <li><i class="fas fa-user"></i>5</li>
+                    <li><i class="fas fa-user"></i>6</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> info@programacionweb3.com</li>
+                    <li><i class="fas fa-phone"></i> +591 123 45 678</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Universidad Mayor de San Andres, La Paz, Bolivia</li>
+                </ul>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Programación Web III. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
