@@ -85,13 +85,29 @@
             }
             return stars;
         }
+        //ordenar por precio
+        function sortProducts(products, order) {
+    if (order === 'price-asc') {
+        // Menor a mayor
+        return products.slice().sort((a, b) => a.price - b.price);
+    } else if (order === 'price-desc') {
+        // Mayor a menor
+        return products.slice().sort((a, b) => b.price - a.price);
+    } else if (order === 'rating') {
+        // Mejor valorados
+        return products.slice().sort((a, b) => b.rating - a.rating);
+    }
+    return products;
+}
 
         // Función para filtrar productos
         function filterProducts() {
             const category = document.getElementById('categoryFilter').value;
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            
-            const filteredProducts = productsData.products.filter(product => {
+            const sortOrder =document.getElementById(`sortSelect`).value;
+
+
+            let filteredProducts = productsData.products.filter(product => {
                 const matchesCategory = category === 'all' || product.category === category;
                 const matchesSearch = product.title.toLowerCase().includes(searchTerm) || 
                                      product.description.toLowerCase().includes(searchTerm) ||
@@ -99,6 +115,7 @@
                 
                 return matchesCategory && matchesSearch;
             });
+            filteredProducts = sortProducts(filteredProducts, sortOrder);
             
             renderProducts(filteredProducts);
         }
@@ -115,5 +132,5 @@
                     filterProducts();
                 }
             });
+            document.getElementById('sortSelect').addEventListener('change', filterProducts);
         });
-    

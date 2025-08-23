@@ -1,24 +1,28 @@
-/* Paleta de colores vibrante */
+/* PALETA DE COLORES MODERNA Y EQUILIBRADA */
 :root {
-    --primary: #7E57C2;
-    --secondary: #42A5F5;
-    --accent: #FF7043;
-    --dark: #303F9F;
-    --light: #F5F7FA;
-    --background: #FFFFFF;
-    --text: #37474F;
-    --sale: #EF5350;
-    --discount: #66BB6A;
-    --success: #26A69A;
-    --warning: #FFCA28;
-    --danger: #EC407A;
-    --border: #E0E0E0;
-    --shadow: rgba(0, 0, 0, 0.08);
-    --gradient: linear-gradient(135deg, #7E57C2 0%, #42A5F5 100%);
-    --gradient-accent: linear-gradient(135deg, #FF7043 0%, #FFCA28 100%);
-    --gradient-dark: linear-gradient(135deg, #303F9F 0%, #7E57C2 100%);
+    --primary: #5E60CE;       /* Púrpura azulado moderno */
+    --secondary: #4EA8DE;     /* Azul cielo refrescante */
+    --accent: #FF6B6B;        /* Coral suave */
+    --accent2: #57CC99;       /* Verde menta fresco */
+    --accent3: #FFD166;       /* Amarillo mostaza */
+    --dark: #3A506B;          /* Azul oscuro sofisticado */
+    --light: #F8F9FA;         /* Fondo blanco cálido */
+    --background: #FFFFFF;    /* Fondo blanco puro */
+    --text: #2B2D42;          /* Texto azul muy oscuro */
+    --sale: #EF476F;          /* Rojo coral para ofertas */
+    --discount: #06D6A0;      /* Verde esmeralda para descuentos */
+    --success: #1B9AAA;       /* Verde azulado para stock */
+    --warning: #FF9E1F;       /* Naranja suave para advertencias */
+    --danger: #F25C54;        /* Rojo terracota para agotado */
+    --border: #D8E2DC;        /* Borde verde muy claro */
+    --shadow: rgba(38, 50, 65, 0.1);
+    --gradient: linear-gradient(135deg, #5E60CE 0%, #4EA8DE 100%);
+    --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #FFD166 100%);
+    --gradient-team: linear-gradient(135deg, #5E60CE 0%, #4EA8DE 50%, #57CC99 100%);
+    --gradient-dark: linear-gradient(135deg, #3A506B 0%, #2B2D42 100%);
 }
 
+/* ESTILOS GENERALES */
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +37,7 @@ body {
     padding: 0;
 }
 
+/* ===== BANNER DE OFERTA ===== */
 .offer-banner {
     background: var(--gradient-accent);
     color: white;
@@ -43,30 +48,14 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* ===== ENCABEZADO ===== */
+/* SOLO DEGRADADO - SIN PATRONES NI LÍNEAS */
 header {
-    background: var(--gradient-dark);
+    background: var(--gradient);
     color: white;
     padding: 50px 20px;
     text-align: center;
     margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23303F9F"/><path d="M0 0L100 100" stroke="%23FFFFFF" stroke-opacity="0.05" stroke-width="2"/><path d="M100 0L0 100" stroke="%23FFFFFF" stroke-opacity="0.05" stroke-width="2"/></svg>');
-    background-size: cover;
-}
-
-.header-content {
-    position: relative;
-    z-index: 1;
 }
 
 .header-content h1 {
@@ -76,13 +65,7 @@ header::before {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.header-content p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 500;
-}
-
+/* ===== FILTROS ===== */
 .filters {
     display: flex;
     justify-content: space-between;
@@ -99,18 +82,19 @@ header::before {
 #categoryFilter, #sortSelect {
     padding: 12px 15px;
     border: 2px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
     background-color: white;
     font-weight: 500;
     transition: all 0.3s;
     color: var(--text);
+    box-shadow: 0 2px 5px var(--shadow);
 }
 
 #categoryFilter:focus, #sortSelect:focus {
     border-color: var(--secondary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.2);
+    box-shadow: 0 0 0 3px rgba(78, 168, 222, 0.3);
 }
 
 .search-box {
@@ -121,16 +105,17 @@ header::before {
 #searchInput {
     padding: 12px 15px;
     border: 2px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
     min-width: 250px;
     transition: all 0.3s;
+    box-shadow: 0 2px 5px var(--shadow);
 }
 
 #searchInput:focus {
     border-color: var(--secondary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.2);
+    box-shadow: 0 0 0 3px rgba(78, 168, 222, 0.3);
 }
 
 #searchBtn {
@@ -138,59 +123,42 @@ header::before {
     background: var(--gradient);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(94, 96, 206, 0.3);
 }
 
 #searchBtn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(94, 96, 206, 0.4);
 }
 
-.promo-banner {
-    background: var(--gradient);
-    color: white;
-    padding: 25px;
-    text-align: center;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.promo-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-.promo-content p {
-    font-size: 1.1rem;margin-bottom: 15px;
-}
-
-.promo-timer {
-    font-weight: 600;
-    font-size: 1.3rem;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px 20px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
+/* TÍTULO PRINCIPAL */
 .main-title {
     text-align: center;
     margin: 30px 0;
     color: var(--dark);
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}/* Línea decorativa con degradado */
+.main-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient);
+    border-radius: 2px;
 }
 
+/* CONTENEDOR DE PRODUCTOS */
 .products-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -202,18 +170,19 @@ header::before {
     margin-right: auto;
 }
 
+/* ===== TARJETAS DE PRODUCTO ===== */
 .product-card {
     background-color: var(--background);
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 16px var(--shadow);
+    box-shadow: 0 10px 20px var(--shadow);
     transition: all 0.3s ease;
     position: relative;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(38, 50, 65, 0.15);
 }
 
 .product-image {
@@ -237,13 +206,13 @@ header::before {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: var(--discount);
+    background: var(--gradient);
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
     font-weight: bold;
     font-size: 0.9rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(94, 96, 206, 0.3);
 }
 
 .wishlist-btn {
@@ -269,6 +238,7 @@ header::before {
     color: white;
 }
 
+/* INFORMACIÓN DEL PRODUCTO */
 .product-info {
     padding: 20px;
 }
@@ -337,9 +307,9 @@ header::before {
     color: #999;
     font-size: 0.9rem;
 }
+
 .discount-price, .final-price {
-    font-weight: bold;
-    font-size: 1.3rem;
+    font-weight: bold;font-size: 1.3rem;
     color: var(--dark);
 }
 
@@ -365,13 +335,14 @@ header::before {
     color: var(--danger);
 }
 
+/* BOTÓN AÑADIR AL CARRITO */
 .add-to-cart-btn {
     width: 100%;
     padding: 14px;
     background: var(--gradient);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
@@ -380,12 +351,12 @@ header::before {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(94, 96, 206, 0.3);
 }
 
 .add-to-cart-btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(94, 96, 206, 0.4);
 }
 
 .add-to-cart-btn:disabled {
@@ -395,6 +366,7 @@ header::before {
     box-shadow: none;
 }
 
+/* MENSAJE SIN PRODUCTOS */
 .no-products {
     text-align: center;
     grid-column: 1 / -1;
@@ -403,6 +375,7 @@ header::before {
     color: #666;
 }
 
+/* NEWSLETTER */
 .newsletter {
     background: var(--gradient-dark);
     color: white;
@@ -438,7 +411,7 @@ header::before {
     flex: 1;
     padding: 14px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
 }
 
@@ -447,20 +420,23 @@ header::before {
     background: var(--accent);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
 }
 
 .newsletter-form button:hover {
-    background: #FF5722;
+    background: #FF5252;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
 }
 
+/* PIE DE PÁGINA */
 footer {
-    background: var(--dark);
+    background: var(--gradient-dark);
     color: white;
     padding: 50px 20px 20px;
 }
@@ -476,7 +452,7 @@ footer {
 .footer-section h4 {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    color: var(--accent);
+    color: var(--accent3);
 }
 
 .footer-section ul {
@@ -489,6 +465,13 @@ footer {
     align-items: center;
     gap: 10px;
 }
+
+/* Colores diferentes para cada integrante del equipo */
+.footer-section ul li:nth-child(1) { color: #5E60CE; }
+.footer-section ul li:nth-child(2) { color: #4EA8DE; }
+.footer-section ul li:nth-child(3) { color: #57CC99; }
+.footer-section ul li:nth-child(4) { color: #FFD166; }
+.footer-section ul li:nth-child(5) { color: #FF6B6B; }.footer-section ul li:nth-child(6) { color: #FF9E1F; }
 
 .social-icons {
     display: flex;
@@ -518,7 +501,10 @@ footer {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}@media (max-width: 768px) {
+}
+
+/* DISEÑO RESPONSIVE*/
+@media (max-width: 768px) {
     .filters {
         flex-direction: column;
         align-items: stretch;
@@ -561,9 +547,5 @@ footer {
     .products-container {
         grid-template-columns: 1fr;
         padding: 0 15px;
-    }
-    
-    .promo-content h2 {
-        font-size: 1.6rem;
     }
 }
