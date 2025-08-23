@@ -85,19 +85,20 @@
             }
             return stars;
         }
+        //filtrar por precio y valoracion 
         //ordenar por precio
         function sortProducts(products, order) {
-    if (order === 'price-asc') {
+            if (order === 'price-asc') {
         // Menor a mayor
         return products.slice().sort((a, b) => a.price - b.price);
-    } else if (order === 'price-desc') {
+        } else if (order === 'price-desc') {
         // Mayor a menor
         return products.slice().sort((a, b) => b.price - a.price);
-    } else if (order === 'rating') {
+        } else if (order === 'rating') {
         // Mejor valorados
         return products.slice().sort((a, b) => b.rating - a.rating);
-    }
-    return products;
+        }
+        return products;
 }
 
         // Función para filtrar productos
@@ -115,7 +116,7 @@
                 
                 return matchesCategory && matchesSearch;
             });
-            filteredProducts = sortProducts(filteredProducts, sortOrder);
+            filteredProducts = sortProducts(filteredProducts, sortOrder);//llamar a la funcion sortOrder
             
             renderProducts(filteredProducts);
         }
